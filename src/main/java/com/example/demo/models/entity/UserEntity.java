@@ -1,6 +1,8 @@
 package com.example.demo.models.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
 
 import java.time.LocalDate;
@@ -13,6 +15,9 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String login;
-    @CreatedBy
-    private LocalDate createdBy;
+    @CreationTimestamp
+    private LocalDate createdDatetime;
+    @UpdateTimestamp
+    private LocalDate updatedDatetime;
+
 }
