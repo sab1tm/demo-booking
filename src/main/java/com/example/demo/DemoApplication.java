@@ -39,6 +39,9 @@ public class DemoApplication implements CommandLineRunner {
 		System.out.println(admins);
 		System.out.println(users);
 
+
+
+
 		// test hotels, rooms
 
 		// get hotel by city

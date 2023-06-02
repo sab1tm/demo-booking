@@ -25,6 +25,10 @@ public class UserEntity {
     private Timestamp updatedDatetime;
     @Column(length = 255)
     private String role;
+    @Column(length = 255)
+    private String city;
+    @Column(length = 255)
+    private String hotel;
 
     public Long getId() {
         return id;
@@ -82,6 +86,22 @@ public class UserEntity {
         this.role = role;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(String hotel) {
+        this.hotel = hotel;
+    }
+
     @Override
     public String toString() {
         return "UserEntity{" +
@@ -92,6 +112,8 @@ public class UserEntity {
                 ", createdDatetime=" + createdDatetime +
                 ", updatedDatetime=" + updatedDatetime +
                 ", role='" + role + '\'' +
+                ", city='" + city + '\'' +
+                ", hotel='" + hotel + '\'' +
                 '}';
     }
 }
