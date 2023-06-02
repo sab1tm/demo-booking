@@ -41,21 +41,21 @@ public class DemoApplication implements CommandLineRunner {
 		userService.save(user);
 
 		UserEntity user1 = new UserEntity();
-		user.setId(3L);
-		user.setEmail("user1@mail.kz");
-		user.setRole("USER");
-		user.setCity("Almaty");
-		user.setHotel("RIXOS");
-		user.setRoom(289L);
+		user1.setId(3L);
+		user1.setEmail("user1@mail.kz");
+		user1.setRole("USER");
+		user1.setCity("Almaty");
+		user1.setHotel("RIXOS");
+		user1.setRoom(289L);
 		userService.save(user1);
 
 		UserEntity user2 = new UserEntity();
-		user.setId(4L);
-		user.setEmail("user2@mail.kz");
-		user.setRole("USER");
-		user.setCity("Astana");
-		user.setHotel("HILTON");
-		user.setRoom(117L);
+		user2.setId(4L);
+		user2.setEmail("user2@mail.kz");
+		user2.setRole("USER");
+		user2.setCity("Astana");
+		user2.setHotel("HILTON");
+		user2.setRoom(117L);
 		userService.save(user2);
 
 		List<UserEntity> admins = userService.getByRole("ADMIN");
