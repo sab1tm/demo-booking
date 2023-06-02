@@ -30,7 +30,6 @@ public class UserEntity {
     private String city;
     @Column(length = 255)
     private String hotel;
-    @NumberFormat
     private long room;
 
     public Long getId() {
