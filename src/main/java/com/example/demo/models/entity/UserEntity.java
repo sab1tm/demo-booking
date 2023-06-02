@@ -25,6 +25,10 @@ public class UserEntity {
     private Timestamp updatedDatetime;
     @Column(length = 255)
     private String role;
+    @Column(length = 255)
+    private String city;
+    @Column(length = 255)
+    private String hotel;
 
     public Long getId() {
         return id;
