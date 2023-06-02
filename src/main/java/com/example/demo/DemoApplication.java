@@ -71,6 +71,19 @@ public class DemoApplication implements CommandLineRunner {
 		System.out.println(rooms);
 
 
+		List<UserEntity> hotelsByCity = userService.getByCity("Astana");
+		System.out.println("Hotels in Astana: ");
+		for (UserEntity hotel : hotelsByCity) {
+			System.out.println(hotel.getHotel());
+		}
+
+		List<UserEntity> roomsByHotel = userService.getByHotel("RIXOS");
+		System.out.println("Rooms in RIXOS: ");
+		for (UserEntity room : roomsByHotel) {
+			System.out.println(room.getRoom());
+		}
+
+
 		// test hotels, rooms
 
 		// get hotel by city
