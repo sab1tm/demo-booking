@@ -21,16 +21,23 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		UserEntity user = new UserEntity();
-		user.setEmail("test@mail.kz");
-		user.setRole("ADMIN");
-		user = userService.save(user);
+		UserEntity admin = new UserEntity();
+		admin.setId(1L);
+		admin.setEmail("admin@mail.kz");
+		admin.setRole("ADMIN");
+		userService.save(admin);
 
-		System.out.println(user);
+		UserEntity user = new UserEntity();
+		user.setId(2L);
+		user.setEmail("user@mail.kz");
+		user.setRole("USER");
+		userService.save(user);
 
 		List<UserEntity> admins = userService.getByRole("ADMIN");
+		List<UserEntity> users = userService.getByRole("USER");
 
 		System.out.println(admins);
+		System.out.println(users);
 
 		// test hotels, rooms
 
