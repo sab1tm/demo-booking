@@ -25,7 +25,7 @@ public class DemoApplication implements CommandLineRunner {
 		admin.setId(1L);
 		admin.setEmail("admin@mail.kz");
 		admin.setRole("ADMIN");
-		admin.setCity("Almaty");
+		admin.setCity("Astana");
 		admin.setHotel("HILTON");
 		userService.save(admin);
 
@@ -33,17 +33,25 @@ public class DemoApplication implements CommandLineRunner {
 		user.setId(2L);
 		user.setEmail("user@mail.kz");
 		user.setRole("USER");
-		user.setCity("Astana");
+		user.setCity("Almaty");
 		user.setHotel("RIXOS");
 		userService.save(user);
 
 		UserEntity user1 = new UserEntity();
 		user.setId(3L);
-		user.setEmail("user@mail.kz");
+		user.setEmail("user1@mail.kz");
 		user.setRole("USER");
 		user.setCity("Almaty");
 		user.setHotel("RIXOS");
 		userService.save(user1);
+
+		UserEntity user2 = new UserEntity();
+		user.setId(4L);
+		user.setEmail("user2@mail.kz");
+		user.setRole("USER");
+		user.setCity("Astana");
+		user.setHotel("HILTON");
+		userService.save(user2);
 
 		List<UserEntity> admins = userService.getByRole("ADMIN");
 		List<UserEntity> users = userService.getByRole("USER");
