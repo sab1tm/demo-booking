@@ -25,21 +25,35 @@ public class DemoApplication implements CommandLineRunner {
 		admin.setId(1L);
 		admin.setEmail("admin@mail.kz");
 		admin.setRole("ADMIN");
+		admin.setCity("Almaty");
+		admin.setHotel("HILTON");
 		userService.save(admin);
 
 		UserEntity user = new UserEntity();
 		user.setId(2L);
 		user.setEmail("user@mail.kz");
 		user.setRole("USER");
+		user.setCity("Astana");
+		user.setHotel("RIXOS");
 		userService.save(user);
+
+		UserEntity user1 = new UserEntity();
+		user.setId(3L);
+		user.setEmail("user@mail.kz");
+		user.setRole("USER");
+		user.setCity("Almaty");
+		user.setHotel("RIXOS");
+		userService.save(user1);
 
 		List<UserEntity> admins = userService.getByRole("ADMIN");
 		List<UserEntity> users = userService.getByRole("USER");
+		List<UserEntity> cities = userService.getByCity("");
+		List<UserEntity> hotels = userService.getByHotel("");
 
 		System.out.println(admins);
 		System.out.println(users);
-
-
+		System.out.println(cities);
+		System.out.println(hotels);
 
 
 		// test hotels, rooms

@@ -28,4 +28,12 @@ public class UserService {
     public List<UserEntity> getByRole(String role) {
         return userRepository.findAllByRole(role);
     }
+
+    public List<UserEntity> getByCity(String city) {
+        return userRepository.findAllByCity(city);
+    }
+
+    public List<UserEntity> getByHotel(String hotel) {
+        return userRepository.findAllByHotel(hotel);
+    }
 }
