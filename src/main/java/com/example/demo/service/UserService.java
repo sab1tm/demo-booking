@@ -36,4 +36,8 @@ public class UserService {
     public List<UserEntity> getByHotel(String hotel) {
         return userRepository.findAllByHotel(hotel);
     }
+
+    public List<UserEntity> getByRoom(Long room) {
+        return userRepository.findAllByRoom(room);
+    }
 }

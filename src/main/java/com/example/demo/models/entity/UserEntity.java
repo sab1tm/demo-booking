@@ -3,6 +3,7 @@ package com.example.demo.models.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.format.annotation.NumberFormat;
 
 import java.sql.Timestamp;
 
@@ -29,6 +30,8 @@ public class UserEntity {
     private String city;
     @Column(length = 255)
     private String hotel;
+    @NumberFormat
+    private long room;
 
     public Long getId() {
         return id;
@@ -102,6 +105,14 @@ public class UserEntity {
         this.hotel = hotel;
     }
 
+    public Long getRoom() {
+        return room;
+    }
+
+    public void setRoom(Long room) {
+        this.room = room;
+    }
+
     @Override
     public String toString() {
         return "UserEntity{" +
@@ -114,6 +125,7 @@ public class UserEntity {
                 ", role='" + role + '\'' +
                 ", city='" + city + '\'' +
                 ", hotel='" + hotel + '\'' +
+                ", room='" + room + '\'' +
                 '}';
     }
 }
