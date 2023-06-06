@@ -1,9 +1,10 @@
+// UserEntity.java
 package com.example.demo.models.entity;
 
+import aj.org.objectweb.asm.ConstantDynamic;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.format.annotation.NumberFormat;
 
 import java.sql.Timestamp;
 
@@ -14,117 +15,57 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(length = 255)
     private String login;
+
     @Column(length = 255)
     private String password;
+
     @Column(length = 255)
     private String email;
+
     @CreationTimestamp
     private Timestamp createdDatetime;
+
     @UpdateTimestamp
     private Timestamp updatedDatetime;
+
     @Column(length = 255)
     private String role;
+
     @Column(length = 255)
     private String city;
-    @Column(length = 255)
-    private String hotel;
-    private long room;
 
-    public Long getId() {
-        return id;
+    @ManyToOne
+    @JoinColumn(name = "hotel_id")
+    private HotelEntity hotel;
+
+    private Long room;
+
+    public void setId(long l) {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmail(String s) {
     }
 
-    public String getLogin() {
-        return login;
+    public void setRole(String admin) {
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setCity(String astana) {
     }
 
-    public String getPassword() {
-        return password;
+    public void setHotel(HotelEntity hilton) {
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setRoom(long l) {
     }
 
-    public String getEmail() {
-        return email;
+    public ConstantDynamic getHotel() {
+        return null;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Timestamp getCreatedDatetime() {
-        return createdDatetime;
-    }
-
-    public void setCreatedDatetime(Timestamp createdDatetime) {
-        this.createdDatetime = createdDatetime;
-    }
-
-    public Timestamp getUpdatedDatetime() {
-        return updatedDatetime;
-    }
-
-    public void setUpdatedDatetime(Timestamp updatedDatetime) {
-        this.updatedDatetime = updatedDatetime;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(String hotel) {
-        this.hotel = hotel;
-    }
-
-    public Long getRoom() {
-        return room;
-    }
-
-    public void setRoom(Long room) {
-        this.room = room;
-    }
-
-    @Override
-    public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", createdDatetime=" + createdDatetime +
-                ", updatedDatetime=" + updatedDatetime +
-                ", role='" + role + '\'' +
-                ", city='" + city + '\'' +
-                ", hotel='" + hotel + '\'' +
-                ", room='" + room + '\'' +
-                '}';
+    public boolean getRoom() {
+        return false;
     }
 }

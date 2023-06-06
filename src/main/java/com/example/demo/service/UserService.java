@@ -1,10 +1,11 @@
+// UserService.java
 package com.example.demo.service;
 
+import com.example.demo.models.entity.HotelEntity;
 import com.example.demo.models.entity.UserEntity;
 import com.example.demo.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +34,7 @@ public class UserService {
         return userRepository.findAllByCity(city);
     }
 
-    public List<UserEntity> getByHotel(String hotel) {
+    public List<UserEntity> getByHotel(HotelEntity hotel) {
         return userRepository.findAllByHotel(hotel);
     }
 
