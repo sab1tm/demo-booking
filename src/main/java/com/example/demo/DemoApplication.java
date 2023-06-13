@@ -42,8 +42,6 @@ public class DemoApplication implements CommandLineRunner {
 		admin.setEmail("admin@mail.kz");
 		admin.setRole("ADMIN");
 		admin.setCity("Astana");
-		admin.setHotel(hilton);
-		admin.setRoom(101L);
 		userService.save(admin);
 
 		UserEntity user = new UserEntity();
@@ -51,8 +49,6 @@ public class DemoApplication implements CommandLineRunner {
 		user.setEmail("user@mail.kz");
 		user.setRole("USER");
 		user.setCity("Almaty");
-		user.setHotel(rixos);
-		user.setRoom(245L);
 		userService.save(user);
 
 		UserEntity user1 = new UserEntity();
@@ -60,8 +56,6 @@ public class DemoApplication implements CommandLineRunner {
 		user1.setEmail("user1@mail.kz");
 		user1.setRole("USER");
 		user1.setCity("Almaty");
-		user1.setHotel(rixos);
-		user1.setRoom(289L);
 		userService.save(user1);
 
 		UserEntity user2 = new UserEntity();
@@ -69,33 +63,15 @@ public class DemoApplication implements CommandLineRunner {
 		user2.setEmail("user2@mail.kz");
 		user2.setRole("USER");
 		user2.setCity("Astana");
-		user2.setHotel(hilton);
-		user2.setRoom(117L);
 		userService.save(user2);
 
 		List<UserEntity> admins = userService.getByRole("ADMIN");
 		List<UserEntity> users = userService.getByRole("USER");
 		List<UserEntity> cities = userService.getByCity("Astana");
-		List<UserEntity> hotels = userService.getByHotel(rixos);
-		List<UserEntity> rooms = userService.getByRoom(1L);
 
 		System.out.println(admins);
 		System.out.println(users);
 		System.out.println(cities);
-		System.out.println(hotels);
-		System.out.println(rooms);
-
-		List<UserEntity> hotelsByCity = userService.getByCity("Astana");
-		System.out.println("Hotels in Astana: ");
-		for (UserEntity hotel : hotelsByCity) {
-			System.out.println(hotel.getHotel().getName());
-		}
-
-		List<UserEntity> roomsByHotel = userService.getByHotel(rixos);
-		System.out.println("Rooms in RIXOS: ");
-		for (UserEntity room : roomsByHotel) {
-			System.out.println(room.getRoom());
-		}
 
 		List<HotelEntity> allHotels = hotelService.getAllHotels();
 		System.out.println("All Hotels:");

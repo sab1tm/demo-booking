@@ -1,21 +1,17 @@
-// HotelEntity.java
+// CityEntity.java
 package com.example.demo.models.entity;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "hotels")
-public class HotelEntity {
-
+@Table(name = "cities")
+public class CityEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(length = 255)
     private String name;
-
-    @Column(name = "city_id")
-    private Long cityId;
 
     // getters and setters
 
@@ -33,13 +29,5 @@ public class HotelEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(Long cityId) {
-        this.cityId = cityId;
     }
 }

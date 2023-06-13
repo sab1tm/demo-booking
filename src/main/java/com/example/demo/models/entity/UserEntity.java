@@ -37,35 +37,69 @@ public class UserEntity {
     @Column(length = 255)
     private String city;
 
-    @ManyToOne
-    @JoinColumn(name = "hotel_id")
-    private HotelEntity hotel;
+    // getters and setters
 
-    private Long room;
-
-    public void setId(long l) {
+    public Long getId() {
+        return id;
     }
 
-    public void setEmail(String s) {
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setRole(String admin) {
+    public String getLogin() {
+        return login;
     }
 
-    public void setCity(String astana) {
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public void setHotel(HotelEntity hilton) {
+    public String getPassword() {
+        return password;
     }
 
-    public void setRoom(long l) {
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public ConstantDynamic getHotel() {
-        return null;
+    public String getEmail() {
+        return email;
     }
 
-    public boolean getRoom() {
-        return false;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Timestamp getCreatedDatetime() {
+        return createdDatetime;
+    }
+
+    public void setCreatedDatetime(Timestamp createdDatetime) {
+        this.createdDatetime = createdDatetime;
+    }
+
+    public Timestamp getUpdatedDatetime() {
+        return updatedDatetime;
+    }
+
+    public void setUpdatedDatetime(Timestamp updatedDatetime) {
+        this.updatedDatetime = updatedDatetime;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }

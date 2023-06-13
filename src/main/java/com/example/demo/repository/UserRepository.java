@@ -14,8 +14,4 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     List<UserEntity> findAllByRole(String role);
 
     List<UserEntity> findAllByCity(String city);
-
-    List<UserEntity> findAllByHotel(HotelEntity hotel);
-
-    List<UserEntity> findAllByRoom(Long room);
 }
