@@ -12,6 +12,4 @@ public class RoomService {
     public RoomService(RoomRepository roomRepository) {
         this.roomRepository = roomRepository;
     }
-
-    // Add methods for room-related operations if needed
 }
